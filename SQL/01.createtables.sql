@@ -1,0 +1,113 @@
+-- MySQL Script for Airline Financial Analytics Project
+-- Final schema based on the portfolio database design
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema airline_database
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `airline_database`
+DEFAULT CHARACTER SET utf8mb4
+COLLATE utf8mb4_0900_ai_ci;
+
+USE `airline_database`;
+
+-- -----------------------------------------------------
+-- Table `airline_database`.`companies`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `airline_database`.`companies` (
+  `company_id` INT NOT NULL,
+  `name` VARCHAR(60) NOT NULL,
+  `country` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`company_id`)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `airline_database`.`income_statements`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `airline_database`.`income_statements` (
+  `company_id` INT NOT NULL,
+  `year` INT NOT NULL,
+  `revenue` DECIMAL(20,2) NOT NULL,
+  `operating_profit` DECIMAL(20,2) NULL DEFAULT NULL,
+  `net_profit` DECIMAL(20,2) NOT NULL,
+  PRIMARY KEY (`company_id`, `year`),
+  CONSTRAINT `income_statements_fk_companies`
+    FOREIGN KEY (`company_id`)
+    REFERENCES `airline_database`.`companies` (`company_id`)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `airline_database`.`balance_sheets`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `airline_database`.`balance_sheets` (
+  `company_id` INT NOT NULL,
+  `year` INT NOT NULL,
+  `assets` DECIMAL(20,2) NOT NULL,
+  `current_assets` DECIMAL(20,2) NOT NULL,
+  `liabilities` DECIMAL(20,2) NOT NULL,
+  `current_liabilities` DECIMAL(20,2) NOT NULL,
+  `equity` DECIMAL(20,2) NOT NULL,
+  `cash` DECIMAL(20,2) NOT NULL,
+  PRIMARY KEY (`company_id`, `year`),
+  CONSTRAINT `balance_sheets_fk_companies`
+    FOREIGN KEY (`company_id`)
+    REFERENCES `airline_database`.`companies` (`company_id`)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `airline_database`.`financial_ratios`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `airline_database`.`financial_ratios` (
+  `company_id` INT NOT NULL,
+  `year` INT NOT NULL,
+  `ROE` DECIMAL(10,2) NOT NULL,
+  `ROA` DECIMAL(10,2) NOT NULL,
+  `asset_turnover` DECIMAL(10,2) NULL DEFAULT NULL,
+  `working_capital` DECIMAL(20,2) NULL DEFAULT NULL,
+  `Debt_ratio` DECIMAL(10,2) NULL DEFAULT NULL,
+  `Net_Profit_Margin` DECIMAL(10,2) NULL DEFAULT NULL,
+  `cash_ratio` DECIMAL(10,2) NULL DEFAULT NULL,
+  `Altman_Z_Score` DECIMAL(10,2) NULL DEFAULT NULL,
+  PRIMARY KEY (`company_id`, `year`),
+  CONSTRAINT `financial_ratios_fk_companies`
+    FOREIGN KEY (`company_id`)
+    REFERENCES `airline_database`.`companies` (`company_id`)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+-- -----------------------------------------------------
+-- Table `airline_database`.`airline_metric_changes`
+-- Supplementary operational data for Power BI
+-- No foreign key by design, based on project decision
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `airline_database`.`airline_metric_changes` (
+  `company_id` INT NOT NULL,
+  `period_start` INT NOT NULL,
+  `period_end` INT NOT NULL,
+  `airport_passenger_traffic_change` DECIMAL(10,2) NULL DEFAULT NULL,
+  `passengers_change` DECIMAL(10,2) NULL DEFAULT NULL,
+  `flights_change` DECIMAL(10,2) NULL DEFAULT NULL,
+  `load_factor_change` DECIMAL(10,2) NULL DEFAULT NULL,
+  PRIMARY KEY (`company_id`)
+)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
