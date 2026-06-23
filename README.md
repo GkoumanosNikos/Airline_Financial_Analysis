@@ -22,7 +22,7 @@ The main tables of the database are:
 'income_statements'
 'balance_sheets'
 'financial_ratios'
-'airline_metrics'
+'airline_metrics_changes'
 
 A SQL view named 'vw_financial' was created in order to include the tables of companies, income_statements, balance_sheets, financial_ratios into one table.
 
@@ -77,7 +77,7 @@ British Airways had better Average ROE than Aegean Airlines. British Airways sha
 
 ### Query 5: Which company had the highest average liquidity?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 AVG, WHERE, GROUP BY
 
@@ -89,7 +89,7 @@ Aegean Airlines had more liquidity than British Airways during 2019-2022. This m
 
 ### Query 6: Which company used its assets more efficiently based on average ROA and Asset Turnover between 2019 and 2022?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 AVG, WHERE, GROUP BY, ORDER BY
 
@@ -101,7 +101,7 @@ Aegean Airlines was more efficient than British Airways during 2019-2022 on both
 
 ### Query 7:  Which company had the highest average finacial performance based on ROA, ROE, Net Profit Margin, Debt Ratio?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 AVG, WHERE, GROUP BY, ORDER BY
 
@@ -109,11 +109,11 @@ AVG, WHERE, GROUP BY, ORDER BY
 
 **Insight: **
 
-Aegean Airlines had highest Average ROA than British Airways as we highligted before. This means that Aegean Airlines generated more revenue using one unit of its asset than British Airways. British Airways had highest Average ROE, fact which describes that its shareholder was affected less than Aegean Airlines. However, Average Net Profit was negative during 2019-2022, for both of the companies. This indicated from the fact that both of the companies faced at least one year with negative Net Profit, due to Covid-19 conditions. Aegean Airlines presents highest Average Net Profit than British Airways throuhg the years. Also, Debt Ratio is a significant KPI which describes the leverage of Debt of every company. British Airways is more efficient, because it had less Average Debt than Aegean Airlines during 2019-2022. In conclusion, this query has mixed outcomes, and we can't highlight which one affected more. 
+Aegean Airlines had highest Average ROA than British Airways as we highligted before. This means that Aegean Airlines generated more revenue using one unit of its asset than British Airways. British Airways had highest Average ROE, fact which describes that its shareholder was affected less than Aegean Airlines. However, Average Net Profit was negative during 2019-2022, for both of the companies. This, indicated from the fact that both of the companies faced at least one year with negative Net Profit, due to Covid-19 conditions. Aegean Airlines presents highest Average Net Profit than British Airways throuhg the years. Also, Debt Ratio is a significant KPI which describes the leverage of Debt of every company. British Airways is more efficient, because it had less Average Debt than Aegean Airlines during 2019-2022. In conclusion, this query has mixed outcomes, and we can't highlight which one affected more. 
 
 ### Query 8: Which company had the lowest Average Debt Ratio through the years?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 AVG, WHERE, GROUP BY, ORDER BY
 
@@ -125,7 +125,7 @@ British Airways recorded better performance in this KPI than Aegean Airlines thr
 
 ### Query 9:  Which company had better financial performance post-Covid?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 AVG, WHERE, GROUP BY, ORDER BY
 
@@ -137,7 +137,7 @@ This query aims to describe the perforamnce of each company after the pandemic c
 
 ### Query 10:  Which company had better financial stability based on Altman Z-Score between 2019 and 2022?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 CASE, WHERE, ORDER BY
 
@@ -149,7 +149,7 @@ This KPI is one of the most significant Kpi's of business. It shows the financia
 
 ### Query 11: Which years did each company record net losses between 2019 and 2022?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 WHERE, AND, BETWEEN, ORDER BY
 
@@ -161,7 +161,7 @@ This indicator identifies the years of Net Losses of each company. The query out
 
 ### Query 12: How do the companies compare across key financial ratios between 2019 and 2022?
 
-** SQL Concepts Used: **
+** SQL Concepts Used:**
 
 AVG, WHERE, GROUP BY, UNION ALL, ORDER BY
 
@@ -169,4 +169,4 @@ AVG, WHERE, GROUP BY, UNION ALL, ORDER BY
 
 **Insight: **
 
-This query compares three financial KPI indicators: average ROE, average Cash Ratio, average Debt Ratio. British Airways had a higher average ROE, as we mentioned before. British Airways performed better in terms of average ROE, suggesting that its shareholder returns were less negatively affected compared to Aegean Airlines. Moreover, British Airways had more effective average Debt Ratio, fact which means that it used its assets more effectively than Aegean Airlines in order to coverage its liabilities. On the other hand, Aegean Airlines showed a stonger average Cash Ratio than British Airways through the years. This indicator shows that the company was able to use its cash in order to cover its liabilites. Overall, the outcomes show mixed performance for each company.
+This query compares three financial KPI indicators: average ROE, average Cash Ratio, average Debt Ratio. British Airways had a higher average ROE, as we mentioned before. British Airways performed better in terms of average ROE, suggesting that its shareholder returns were less negatively affected compared to Aegean Airlines. Moreover, British Airways had more effective average Debt Ratio, fact which means that it used its assets more effectively than Aegean Airlines in order to coverage its current liabilities. On the other hand, Aegean Airlines showed a stonger average Cash Ratio than British Airways through the years. This indicator shows that the company was able to use its cash in order to cover its liabilites. Overall, the outcomes show mixed performance for each company.
