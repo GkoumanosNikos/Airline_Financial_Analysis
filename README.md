@@ -6,6 +6,7 @@ SQL and Power BI financial analytics project analyzing airline companies between
 - MySQL Workbench
 - SQL
 - Excel
+- Power BI
 - GitHub
 
 ## Project Structure
@@ -13,6 +14,7 @@ SQL and Power BI financial analytics project analyzing airline companies between
 - `SQL/`: contains database scripts, data insertion scripts, and business queries.
 - `screenshots/`: contains screenshots of SQL query results.
 - `README.md`: presents the project overview, business questions, results, and insights.
+- `powerbi/`: contains the Power BI dashboard file and dashboard overview image.
 
 ## Database Overview
 The database includes financial data from Aegean Airlines and British Airways for the period 2019-2022.
@@ -173,19 +175,18 @@ This query compares three financial KPI indicators: average ROE, average Cash Ra
 
 
 
-## Power Bi Dashboard
+## Power BI Dashboard
 
-A Power Bi Dashboard was created to visualize the financial performance of Aegean Airlines and British Airways during 2019-2022. 
+A Power BI Dashboard was created to visualize the financial performance of Aegean Airlines and British Airways during 2019-2022. 
 
 The dashboard includes: 
 - Total Revenues and Total Net Profit of each company
-- Average ROE, Average Cash Rstio and Average Debt Ratio KPI's of each company
+- Average ROE, Average Cash Ratio and Average Debt Ratio KPI's of each company
 - Revenue trends of each year and each company
 - Net Profit trends by year and company
 - Cash Ratio and Debt Ratio trends
 - Company and year slicers for filtering
-- Key Insights for more information about
+- Key business insights based on the dashboard results
 
 ![Power BI Dashboard Overview](powerbi/dashboard_overview.png) 
   
-- 
