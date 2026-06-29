@@ -170,3 +170,22 @@ AVG, WHERE, GROUP BY, UNION ALL, ORDER BY
 **Insight: **
 
 This query compares three financial KPI indicators: average ROE, average Cash Ratio, average Debt Ratio. British Airways had a higher average ROE, as we mentioned before. British Airways performed better in terms of average ROE, suggesting that its shareholder returns were less negatively affected compared to Aegean Airlines. Moreover, British Airways had more effective average Debt Ratio, fact which means that it used its assets more effectively than Aegean Airlines in order to coverage its current liabilities. On the other hand, Aegean Airlines showed a stonger average Cash Ratio than British Airways through the years. This indicator shows that the company was able to use its cash in order to cover its liabilites. Overall, the outcomes show mixed performance for each company.
+
+
+
+## Power Bi Dashboard
+
+A Power Bi Dashboard was created to visualize the financial performance of Aegean Airlines and British Airways during 2019-2022. 
+
+The dashboard includes: 
+- Total Revenues and Total Net Profit of each company
+- Average ROE, Average Cash Rstio and Average Debt Ratio KPI's of each company
+- Revenue trends of each year and each company
+- Net Profit trends by year and company
+- Cash Ratio and Debt Ratio trends
+- Company and year slicers for filtering
+- Key Insights for more information about
+
+![Power BI Dashboard Overview](powerbi/dashboard_overview.png) 
+  
+- 
